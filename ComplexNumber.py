@@ -1,11 +1,6 @@
 rc1 = input("please input c1: ")
 rc2 = input("please input c2: ")
 
-
-
-
-
-
 def tupalize_c(c1):
     (a1, b1) = [int(num) for num in c1.replace('i', "").split('+')]
     return (a1, b1)
@@ -46,6 +41,16 @@ def divide_cs(c1, c2):
     b3 = ((a2 * b1 - a1 * b2)/(a2 * a2 + b2 * b2))
     return (a3, b3)
 
+def print_modulus(c1):
+    (a1, b1) = c1
+    result = (a1 * a1) + (b1 * b1)
+    print("modulus of " + str(c1) + " : sqrt(" + str(result) + ")")
+
+def complex_conjugate(c1):
+    (a1, b1) = c1
+    b1 = -b1
+    return (a1, b1)
+
 (a1, b1) = tupalize_c(rc1)
 (a2, b2) = tupalize_c(rc2)
 c1 = (a1, b1)
@@ -56,6 +61,10 @@ print("addition of c1 and c2: " + str(add_cs(c1, c2)))
 print("product of c1 and c2: " + str(multiply_cs(c1, c2)))
 print("subtraction of c1 by c2: " + str(subtract_cs(c1, c2)))
 print("division of c1 by c2: " + str(divide_cs(c1, c2)))
+print_modulus(c1)
+print_modulus(c2)
+print("conjugate of c1: " + str(complex_conjugate(c1)))
+print("conjugate of c2: " + str(complex_conjugate(c2)))
 
                                       
 
